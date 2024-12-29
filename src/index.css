@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --border: #27272a;
+  --input: #27272a;
+  --primary: #2563eb;
+  --primary-foreground: #fafafa;
+}
+
+body {
+  @apply bg-[var(--background)] text-[var(--foreground)];
+}
+
+.chat-message {
+  @apply px-4 py-3 rounded-lg;
+}
+
+.user-message {
+  @apply bg-[var(--muted)] text-[var(--foreground)];
+}
+
+.assistant-message {
+  @apply bg-[var(--muted)] text-[var(--foreground)];
+}
+
+.message-input {
+  @apply w-full px-4 py-3 bg-[var(--input)] border border-[var(--border)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] text-[var(--foreground)] placeholder-[var(--muted-foreground)];
+}
+
+.sidebar {
+  @apply bg-[var(--background)] border-r border-[var(--border)] w-80;
+}
+
+.new-chat-button {
+  @apply flex items-center gap-2 w-full px-4 py-2 bg-[var(--muted)] hover:bg-opacity-80 text-[var(--foreground)] rounded-lg transition-colors;
+}
+
+.chat-item {
+  @apply flex items-center gap-2 px-4 py-2 hover:bg-[var(--muted)] rounded-lg cursor-pointer transition-colors;
+}
+
+.chat-item.active {
+  @apply bg-[var(--muted)];
+}
